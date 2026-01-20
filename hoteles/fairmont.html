@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairmont Mayakoba | Premium</title>
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/mainmenu-style.css">
+    <link rel="stylesheet" href="../css/fairmont-style.css">
+</head>
+
+<body>
+    <main class="app-wrapper">
+        <header class="navbar">
+            <div class="brand">
+                <img src="../assets/img_conecta_logo.png" alt="Logo" class="nav-logo">
+            </div>
+
+            <!-- Navegación "Regresar" -->
+            <nav class="nav-return">
+                <!-- Desktop: Texto + Flecha -->
+                <a href="../mainmenu.html" class="back-link-desktop">
+                    <i class="fa-solid fa-arrow-left"></i> REGRESAR
+                </a>
+
+                <!-- Mobile: X en círculo verde (Solo visible < 768px por CSS) -->
+                <a href="../mainmenu.html" class="back-btn-mobile">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+                <div class="search-icon" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <img src="../assets/fairmont7.jpg" class="hero-image">
+            <div class="hero-overlay">
+                <span class="badge">Santuario Premium</span>
+                <h1>Fairmont Mayakoba</h1>
+                <p><i class="fa-solid fa-location-dot"></i> Riviera Maya, México</p>
+                <div class="hotel-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hotel-slider-detail">
+            <div class="swiper mySwiperDetail">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../assets/fairmont1.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont2.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont3.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont4.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont5.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont6.jpg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Ficha Técnica & Argumentario</h2>
+            <p class="justified-text">
+                Propiedad insignia de 240 hectáreas con certificación AAA-5 Diamantes.
+                <strong style="color:var(--accent)">Puntos de Venta (USPs):</strong>
+                Conectividad única mediante canales fluviales, enfoque en sostenibilidad, y el campo de golf PGA "El
+                Camaleón".
+                Ideal para clientes de alto poder adquisitivo que buscan privacidad y contacto con la naturaleza
+                (Eco-Luxury).
+            </p>
+        </section>
+
+        <section class="content-section video-block">
+            <div class="video-container">
+                <video id="hotelVideo" loop muted playsinline class="hotel-video">
+                    <source src="../assets/Vlog_Fairmont_Compress.mp4">
+                </video>
+
+                <!-- Overlay de Play Central (Animación) -->
+                <i class="fa-solid fa-play play-overlay" id="playOverlay"></i>
+
+                <!-- Barra de Controles -->
+                <div class="video-controls" id="videoControls">
+                    <button class="control-btn" id="playPauseBtn"><i class="fa-solid fa-pause"></i></button>
+
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+
+                    <div class="volume-container">
+                        <button class="control-btn" id="muteBtn"><i class="fa-solid fa-volume-xmark"></i></button>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
+                            value="0">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tour-360-section">
+            <div class="tour-content">
+                <i class="fa-solid fa-street-view tour-icon"></i>
+                <h2>Visualización Inmersiva</h2>
+                <p>Herramienta interactiva para presentar instalaciones al cliente.</p>
+                <a href="../vr/fairmont-360.html" class="btn-tour">INICIAR DEMO 360° <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="content-section amenities-block">
+            <h2 class="section-title">Infraestructura & Servicios</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Categoría</h3>
+                    <p>5 Diamantes AAA (Lujo Certificado)</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-golf-ball-tee"></i>
+                    <h3>Golf</h3>
+                    <p>Sede del PGA Tour (Mayakoba)</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-spa"></i>
+                    <h3>Wellness</h3>
+                    <p>Willow Stream Spa (Clase Mundial)</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <h3>Piscinas</h3>
+                    <p>5 Áreas (Adultos e Infinity)</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Gastronomía</h3>
+                    <p>8 Centros de Consumo Gourmet</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <h3>Playa</h3>
+                    <p>Zona Privada con Servicio</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Galería Exclusiva</h2>
+            <div class="photo-gallery">
+                <img src="../assets/fairmont_gallery1.jpg">
+                <img src="../assets/fairmont_gallery2.jpg">
+                <img src="../assets/fairmont_gallery3.jpg">
+                <img src="../assets/fairmont_gallery4.jpg">
+                <img src="../assets/fairmont_gallery5.jpg">
+                <img src="../assets/fairmont_gallery6.jpg">
+                <img src="../assets/fairmont_gallery7.jpg">
+                <img src="../assets/fairmont_gallery8.jpg">
+            </div>
+        </section>
+
+        <section class="content-section map-block">
+            <h2 class="section-title">Ubicación</h2>
+            <p class="justified-text">Ctra. Federal Cancún-Playa del Carmen Km. 298, Playa del Carmen, Quintana Roo,
+                México.</p>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.396924727187!2d-87.03983482475244!3d20.684173897816827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e42ed96030925%3A0x67396c21e6462760!2sFairmont%20Mayakoba!5e0!3m2!1ses-419!2smx!4v1705680000000!5m2!1ses-419!2smx"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <img src="../assets/img_conecta_logo.png" class="footer-logo">
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright">© 2026 Conecta Antigravity</p>
+            </div>
+        </footer>
+    </main>
+
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiperDetail = new Swiper(".mySwiperDetail", {
+            slidesPerView: 1.5, spaceBetween: 15, centeredSlides: true, loop: true,
+        });
+
+        // Transición de Página
+        // Fade In al cargar
+        document.getElementById('transitionOverlay').style.opacity = '0';
+
+        // Fade Out al salir (Interceptar enlaces)
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    document.getElementById('transitionOverlay').style.opacity = '1';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000);
+                }
+            });
+        });
+
+        /* --- VIDEO CONTROLS LOGIC --- */
+        const video = document.getElementById('hotelVideo');
+        const playBtn = document.getElementById('playPauseBtn');
+        const playOverlay = document.getElementById('playOverlay');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const muteBtn = document.getElementById('muteBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const videoControls = document.getElementById('videoControls');
+
+        // Autoplay inicial
+        video.play().catch(() => {
+            // Si el autoplay falla, mostrar icono de play
+            playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+            playOverlay.classList.add('show');
+        });
+
+        // Toggle Play/Pause
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                playOverlay.classList.remove('show');
+                playOverlay.style.opacity = '0';
+            } else {
+                video.pause();
+                playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                playOverlay.classList.add('show');
+            }
+        }
+
+        video.addEventListener('click', togglePlay);
+        playBtn.addEventListener('click', togglePlay);
+
+        // Update Progress Bar
+        video.addEventListener('timeupdate', () => {
+            const percentage = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = `${percentage}%`;
+        });
+
+        // Click on Progress Bar
+        progressContainer.addEventListener('click', (e) => {
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        // Volume Control
+        volumeSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+            video.muted = false;
+            updateVolumeIcon();
+        });
+
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            updateVolumeIcon();
+        });
+
+        function updateVolumeIcon() {
+            if (video.muted || video.volume === 0) {
+                muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+                volumeSlider.value = 0;
+            } else {
+                muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                volumeSlider.value = video.volume;
+            }
+        }
+
+        // Show controls on hover hack for mobile (tap to show)
+        video.addEventListener('touchstart', () => {
+            videoControls.style.opacity = '1';
+            setTimeout(() => { videoControls.style.opacity = '0'; }, 3000);
+        });
+
+        // Búsqueda Expandible
+        const searchIcon = document.getElementById('searchIcon');
+        const searchInput = document.getElementById('searchInput');
+
+        searchIcon.addEventListener('click', () => {
+            searchInput.classList.toggle('active');
+            if (searchInput.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

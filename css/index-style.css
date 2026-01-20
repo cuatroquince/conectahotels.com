@@ -1,0 +1,48 @@
+/* Reset básico para evitar scroll innecesario */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #131310;
+    /* Fondo oscuro */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Evita que se mueva la pantalla */
+}
+
+.intro-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formato cuadrado y responsivo */
+.logo-video {
+    width: 90vw;
+    /* Ocupa el 90% del ancho en móviles */
+    max-width: 500px;
+    /* Tamaño máximo para PC/MAC/Tablets */
+    aspect-ratio: 1 / 1;
+    /* Asegura que se mantenga cuadrado */
+    object-fit: cover;
+    /* Cubre el área cuadrada sin deformarse */
+    border-radius: 8px;
+    /* Suaviza un poco los bordes (opcional) */
+}
+
+/* Media Query para pantallas más grandes (Tablets y PC) */
+@media (min-width: 768px) {
+    .logo-video {
+        width: 50vw;
+        /* En pantallas grandes se ve más proporcional */
+    }
+}

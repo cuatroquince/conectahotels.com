@@ -1,0 +1,257 @@
+/* VR Page Styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    /* Evitar scrollbars en modo VR no inmersivo */
+    background-color: #000;
+}
+
+/* UI Overlay Styles (Top Left) */
+#ui-overlay {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.btn-return {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #1ae7a5;
+    /* Verde Accent */
+    border: 1px solid #1ae7a5;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-return:hover {
+    background: #1ae7a5;
+    color: #000;
+    box-shadow: 0 0 20px rgba(26, 231, 165, 0.4);
+}
+
+/* VR Instructions (Center Bottom Hint) */
+.vr-instructions {
+    position: fixed;
+    bottom: 120px;
+    /* Más arriba para no estorbar al menú nuevo */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    z-index: 900;
+    transition: opacity 0.5s ease;
+}
+
+/* VR DOM Overlay (Titles in VR) */
+#vr-dom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through to 3D scene */
+    display: none;
+    /* Hidden by default, shown in VR */
+    z-index: 9999;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Show overlay when in VR (A-Frame adds this class automatically to the overlay element if configured) */
+body.a-fullscreen #vr-dom-overlay {
+    display: block;
+}
+
+.vr-title-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.vr-title-main {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.vr-subtitle-mode {
+    color: #1ae7a5;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    display: block;
+}
+
+
+/* Menú Inferior (Cristal Satinado Mejorado) */
+.vr-bottom-menu {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 850px;
+    min-height: 80px;
+    /* Altura fija para estabilidad */
+    background: rgba(10, 10, 10, 0.6);
+    /* Más oscuro para contraste */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    /* Más redondeado (Pill shape container) */
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scene-selector {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 5px;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scene-selector::-webkit-scrollbar {
+    display: none;
+}
+
+/* Botones Premium (Pills) */
+.scene-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.scene-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.scene-btn.active {
+    background: #1ae7a5;
+    /* Accent Green */
+    color: #000;
+    box-shadow: 0 0 15px rgba(26, 231, 165, 0.4);
+    font-weight: 800;
+}
+
+/* Logo más elegante */
+.brand-logo-small {
+    height: 35px;
+    width: auto;
+    opacity: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.menu-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    min-width: 140px;
+    /* Evita que el texto baile */
+}
+
+.hotel-name {
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.view-mode {
+    color: #1ae7a5;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+/* Ocultar en VR Mode */
+.hidden-in-vr {
+    opacity: 0 !important;
+    transform: translateX(-50%) translateY(40px) !important;
+    pointer-events: none !important;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .vr-bottom-menu {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        border-radius: 20px;
+        padding: 20px;
+        bottom: 10px;
+        gap: 15px;
+    }
+
+    .scene-selector {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .menu-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .vr-title-main {
+        font-size: 1.5rem;
+    }
+
+    .vr-subtitle-mode {
+        font-size: 0.8rem;
+    }
+}

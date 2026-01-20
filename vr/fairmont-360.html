@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santuario Fairmont 360° VR</title>
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- Event Set Component for Hover Effects -->
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <link rel="stylesheet" href="../css/vr-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- UI Overlay (2D Global - Always Visible Outside VR) -->
+    <div id="ui-overlay">
+        <a href="../hoteles/fairmont.html" class="btn-return">
+            ← Regresar
+        </a>
+    </div>
+
+    <!-- VR DOM OVERLAY (Visible ONLY in VR) -->
+    <!-- This container will be used by webxr="overlayElement" -->
+    <div id="vr-dom-overlay">
+        <div class="vr-title-container">
+            <span class="vr-title-main" id="vrSceneTitleOverlay">GAIA RESTAURANT</span>
+            <span class="vr-subtitle-mode">MODO INMERSIVO</span>
+        </div>
+    </div>
+
+    <!-- Menú Inferior (Multi-Scene - Standard 2D) -->
+    <div id="vr-bottom-menu" class="vr-bottom-menu">
+        <img src="../assets/img_conecta_logo.png" alt="Conecta Logo" class="brand-logo-small">
+
+        <div class="scene-selector" id="sceneSelector">
+            <button class="scene-btn active" onclick="changeScene('gaia')">Gaia</button>
+            <button class="scene-btn" onclick="changeScene('lake')">Lake</button>
+            <button class="scene-btn" onclick="changeScene('rooftop')">Rooftop</button>
+            <button class="scene-btn" onclick="changeScene('room')">Room</button>
+            <button class="scene-btn" onclick="changeScene('wc')">WC</button>
+        </div>
+
+        <div class="menu-info">
+            <span class="hotel-name" id="sceneName">GAIA RESTAURANT</span>
+            <span class="view-mode">Modo Inmersivo</span>
+        </div>
+    </div>
+
+    <div class="vr-instructions">
+        Arrastra para girar | Click para sonido
+    </div>
+
+    <!-- VR Scene -->
+    <!-- Added webxr="overlayElement: #vr-dom-overlay" to enable 2D UI in AR/VR modes -->
+    <a-scene loading-screen="dotsColor: #1ae7a5; backgroundColor: #000000" webxr="overlayElement: #vr-dom-overlay">
+        <a-assets>
+            <video id="video360" src="../assets/360video/fairmont/gaia.mp4" autoplay loop="true" crossorigin="anonymous"
+                playsinline webkit-playsinline></video>
+        </a-assets>
+
+        <a-videosphere src="#video360" rotation="0 -90 0"></a-videosphere>
+
+        <!-- Menú Inmersivo 3D (POLISHED OFFSET RINGS) -->
+        <a-entity id="vr3DMenu" visible="false" position="0 -1.0 -1.4" rotation="-20 0 0">
+
+            <!-- 1. LOGO (Centro Superior) -->
+            <a-image src="../assets/img_conecta_logo.png" position="0 0.25 0.01" height="0.10" width="0.35"
+                material="transparent: true; alphaTest: 0.5; shader: flat"></a-image>
+
+
+            <!-- 2. BOTONES DE ESCENA (Centro Medio) -->
+            <!-- Adjusted Rings: Moved slightly outward to avoid Z-fighting/Overlap -->
+            <!-- Circle Radius: 0.09. Ring Inner: 0.092, Ring Outer: 0.097 -->
+
+            <!-- Botón GAIA -->
+            <a-entity position="-0.50 0 0.02" class="clickable" onclick="changeScene('gaia')"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.09" color="#1a1a1a" material="shader: flat; opacity: 0.8"></a-circle>
+                <a-ring radius-inner="0.092" radius-outer="0.097" color="#ffffff"
+                    material="shader: flat; opacity: 0.5"></a-ring>
+                <a-text value="GAIA" align="center" position="0 0 0.01" width="0.8" color="#ffffff"
+                    font="roboto"></a-text>
+            </a-entity>
+
+            <!-- Botón LAKE -->
+            <a-entity position="-0.25 0 0.02" class="clickable" onclick="changeScene('lake')"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.09" color="#1a1a1a" material="shader: flat; opacity: 0.8"></a-circle>
+                <a-ring radius-inner="0.092" radius-outer="0.097" color="#ffffff"
+                    material="shader: flat; opacity: 0.5"></a-ring>
+                <a-text value="LAKE" align="center" position="0 0 0.01" width="0.8" color="#ffffff"
+                    font="roboto"></a-text>
+            </a-entity>
+
+            <!-- Botón ROOFTOP -->
+            <a-entity position="0 0 0.02" class="clickable" onclick="changeScene('rooftop')"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.09" color="#1a1a1a" material="shader: flat; opacity: 0.8"></a-circle>
+                <a-ring radius-inner="0.092" radius-outer="0.097" color="#ffffff"
+                    material="shader: flat; opacity: 0.5"></a-ring>
+                <a-text value="ROOFTOP" align="center" position="0 0 0.01" width="0.75" color="#ffffff"
+                    font="roboto"></a-text>
+            </a-entity>
+
+            <!-- Botón ROOM -->
+            <a-entity position="0.25 0 0.02" class="clickable" onclick="changeScene('room')"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.09" color="#1a1a1a" material="shader: flat; opacity: 0.8"></a-circle>
+                <a-ring radius-inner="0.092" radius-outer="0.097" color="#ffffff"
+                    material="shader: flat; opacity: 0.5"></a-ring>
+                <a-text value="ROOM" align="center" position="0 0 0.01" width="0.8" color="#ffffff"
+                    font="roboto"></a-text>
+            </a-entity>
+
+            <!-- Botón WC -->
+            <a-entity position="0.50 0 0.02" class="clickable" onclick="changeScene('wc')"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.09" color="#1a1a1a" material="shader: flat; opacity: 0.8"></a-circle>
+                <a-ring radius-inner="0.092" radius-outer="0.097" color="#ffffff"
+                    material="shader: flat; opacity: 0.5"></a-ring>
+                <a-text value="WC" align="center" position="0 0 0.01" width="0.8" color="#ffffff"
+                    font="roboto"></a-text>
+            </a-entity>
+
+
+            <!-- 3. BOTÓN SALIR (Centro Inferior - Smaller & Offset Ring) -->
+            <!-- Reduced Radius from 0.09 to 0.07. Ring offset similarly. -->
+            <a-entity position="0 -0.25 0.02" class="clickable" onclick="exitVRMode()"
+                event-set__enter="_event: mouseenter; scale: 1.15 1.15 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+                <a-circle radius="0.07" color="#e23e3e" material="shader: flat; opacity: 0.2"></a-circle>
+                <a-ring radius-inner="0.072" radius-outer="0.077" color="#e23e3e"
+                    material="shader: flat; opacity: 1"></a-ring>
+                <a-text value="Salir" align="center" position="0 0.005 0.01" width="0.75" color="#e23e3e" font="roboto"
+                    align="center"></a-text>
+                <!-- Hitbox readjusted -->
+                <a-circle radius="0.08" visible="false"></a-circle>
+            </a-entity>
+
+        </a-entity>
+
+
+        <a-entity camera look-controls="reverseMouseDrag: true">
+            <!-- Cursor para interacción en VR -->
+            <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01"
+                material="color: #1ae7a5; shader: flat"
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1"
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1">
+            </a-entity>
+        </a-entity>
+
+        <script>
+            // Configuración de Escenas
+            const scenes = {
+                'gaia': { name: 'GAIA RESTAURANT', src: '../assets/360video/fairmont/gaia.mp4' },
+                'lake': { name: 'WATER CHANNELS', src: '../assets/360video/fairmont/lake.mp4' },
+                'rooftop': { name: 'ROOFTOP BAR', src: '../assets/360video/fairmont/rooftop.mp4' },
+                'room': { name: 'LUXURY SUITE', src: '../assets/360video/fairmont/room.mp4' },
+                'wc': { name: 'MASTER BATHROOM', src: '../assets/360video/fairmont/wc.mp4' }
+            };
+
+            function changeScene(sceneKey) {
+                const videoEl = document.getElementById('video360');
+                const sceneNameEl = document.getElementById('sceneName'); // 2D Text
+                const vrSceneTitleOverlay = document.getElementById('vrSceneTitleOverlay'); // VR 2D Overlay
+                const buttons = document.querySelectorAll('.scene-btn');
+
+                if (scenes[sceneKey]) {
+                    // Update Source
+                    videoEl.src = scenes[sceneKey].src;
+                    videoEl.play().catch(e => console.log('Wait for interaction'));
+
+                    // Update UI Text (2D)
+                    if (sceneNameEl) sceneNameEl.textContent = scenes[sceneKey].name;
+                    // Update VR Overlay Text
+                    if (vrSceneTitleOverlay) vrSceneTitleOverlay.textContent = scenes[sceneKey].name;
+
+                    // Update Active Button (2D)
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                }
+            }
+
+            function exitVRMode() {
+                const scene = document.querySelector('a-scene');
+                if (scene.is('vr-mode')) {
+                    scene.exitVR();
+                }
+            }
+
+            window.changeScene = changeScene;
+            window.exitVRMode = exitVRMode;
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const scene = document.querySelector('a-scene');
+                const bottomMenu = document.getElementById('vr-bottom-menu');
+                const returnBtn = document.getElementById('ui-overlay');
+                const instructions = document.querySelector('.vr-instructions');
+                const vr3DMenu = document.getElementById('vr3DMenu');
+                const vrDomOverlay = document.getElementById('vr-dom-overlay');
+
+                // Enter VR Logic
+                scene.addEventListener('enter-vr', function () {
+                    // Esconder UI normal 2D
+                    if (bottomMenu) bottomMenu.classList.add('hidden-in-vr');
+                    if (returnBtn) returnBtn.style.display = 'none';
+                    if (instructions) instructions.style.display = 'none';
+
+                    // Mostrar Menú 3D
+                    if (vr3DMenu) vr3DMenu.setAttribute('visible', 'true');
+
+                    // Mostrar Overlay VR (el CSS lo maneja, pero nos aseguramos)
+                    if (vrDomOverlay) vrDomOverlay.style.display = 'block';
+                });
+
+                // Exit VR Logic
+                scene.addEventListener('exit-vr', function () {
+                    // Restaurar UI normal 2D
+                    if (bottomMenu) bottomMenu.classList.remove('hidden-in-vr');
+                    if (returnBtn) returnBtn.style.display = 'block';
+                    if (instructions) instructions.style.display = 'block';
+
+                    // Ocultar Menú 3D
+                    if (vr3DMenu) vr3DMenu.setAttribute('visible', 'false');
+
+                    // Ocultar Overlay VR
+                    if (vrDomOverlay) vrDomOverlay.style.display = 'none';
+                });
+
+                scene.addEventListener('click', function () {
+                    var v = document.querySelector('#video360');
+                    if (v && v.paused) v.play();
+                });
+            });
+        </script>
+    </a-scene>
+</body>
+
+</html>

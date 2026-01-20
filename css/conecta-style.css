@@ -1,0 +1,173 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --bg-dark: #050505;
+    --accent: #1ae7a5;
+    --gold: #d4af37;
+    --text-main: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-main);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* WRAPPER PRINCIPAL - CENTRADO */
+.luxury-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Background moved to pseudo-element for filter application */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image with Grayscale */
+.luxury-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/conecta_bg_luxury.png') no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    z-index: 0;
+}
+
+/* Dark Overlay */
+.luxury-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    /* Oscurecido elegante */
+    z-index: 1;
+}
+
+.content-center {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* LOGO */
+.brand-container-center {
+    margin-bottom: 60px;
+}
+
+.brand-logo-center {
+    width: 380px;
+    max-width: 80vw;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.1));
+}
+
+/* BOTÓN LUXURY */
+.start-button-luxury {
+    display: inline-block;
+    padding: 18px 70px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-button-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.start-button-luxury:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 30px rgba(26, 231, 165, 0.15);
+    letter-spacing: 7px;
+    /* Sutil expansión */
+}
+
+.start-button-luxury:hover::before {
+    left: 100%;
+}
+
+/* FOOTER */
+.footer-center {
+    margin-top: 80px;
+    opacity: 0.4;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo-center {
+        width: 280px;
+    }
+
+    .start-button-luxury {
+        padding: 15px 50px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Transición de Página */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}

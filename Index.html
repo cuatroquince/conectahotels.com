@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro | Empresa</title>
+    <link rel="stylesheet" href="css/index-style.css">
+    <style>
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 9999;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #000;
+            /* Asegura fondo negro detrás del video */
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
+
+    <main class="intro-container">
+        <video id="logoVideo" class="logo-video" autoplay muted playsinline>
+            <source src="assets/logoIntro.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </main>
+
+    <script>
+        // Transición de Entrada
+        window.addEventListener('DOMContentLoaded', () => {
+            // Pequeño delay para asegurar que el renderizado inicial negro se vea
+            setTimeout(() => {
+                document.getElementById('transitionOverlay').style.opacity = '0';
+            }, 50);
+        });
+
+        // Lógica de Redirección sincronizada
+        const totalDuration = 7000; // 7 segundos total
+        const fadeOutStart = 6000;  // Empieza a oscurecer al segundo 6
+
+        // Iniciar Fade-Out 1 segundo antes
+        setTimeout(() => {
+            document.getElementById('transitionOverlay').style.opacity = '1';
+        }, fadeOutStart);
+
+        // Redirigir cuando esté negro
+        setTimeout(() => {
+            window.location.href = "conecta.html";
+        }, totalDuration);
+    </script>
+
+</body>
+
+</html>

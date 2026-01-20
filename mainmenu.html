@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta | Catálogo Premium</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/mainmenu-style.css">
+</head>
+
+<body>
+
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
+
+    <div class="app-wrapper">
+        <header class="navbar">
+            <div class="brand">
+                <img src="assets/img_conecta_logo.png" alt="Logo" class="nav-logo">
+            </div>
+
+            <!-- Menú Desktop -->
+            <nav class="desktop-nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="active">INICIO</a></li>
+                    <li><a href="#">HOTELES</a></li>
+                    <li><a href="destinos.html">DESTINOS</a></li>
+                    <li><a href="#">CONTACTO</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+                    <div class="search-icon" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <!-- Hamburguesa (Mobile) -->
+                <div class="hamburger-btn" id="hamburgerBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overlay Menu Mobile (iPhone Style) -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="close-menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="mobile-nav-list">
+                <li><a href="#" class="active">INICIO</a></li>
+                <li><a href="#">HOTELES</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </div>
+
+        <section class="hero-slideshow">
+            <div class="swiper myHeroSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="hoteles/fairmont.html">
+                            <img src="assets/fairmont7.jpg" alt="Fairmont">
+                            <div class="hero-gradient"></div>
+                            <div class="netflix-caption">
+                                <span class="badge">SANTUARIO DE LUJO</span>
+                                <h1 class="netflix-title">Fairmont<br>Mayakoba</h1>
+                                <p><i class="fa-solid fa-play"></i> Continuar viendo</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/hotel1.jpg" alt="HARD ROCK CANCÚN">
+                        <div class="hero-gradient"></div>
+                        <div class="netflix-caption">
+                            <span class="badge">ALL INCLUSIVE</span>
+                            <h1 class="netflix-title">HARD ROCK<br>CANCÚN</h1>
+                            <p><i class="fa-solid fa-music"></i> Music & Vibe</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/hotel2.jpg" alt="PARADISE ESCAPE">
+                        <div class="hero-gradient"></div>
+                        <div class="netflix-caption">
+                            <span class="badge">LUXURY RETREAT</span>
+                            <h1 class="netflix-title">PARADISE<br>ESCAPE</h1>
+                            <p><i class="fa-solid fa-star"></i> Experience the unforgettable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <div class="horizontal-sliders-group">
+
+            <section class="slider-container">
+                <h2 class="slider-title"><i class="fa-solid fa-fire"></i> AGREGADOS RECIENTEMENTE</h2>
+                <div class="swiper mySwiperH1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="hoteles/fairmont.html" class="slide-link">
+                                <img src="assets/fairmont1.jpg">
+                                <div class="slide-caption">
+                                    <h3>FAIRMONT MAYAKOBA</h3>
+                                    <p>Riviera Maya</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel2.jpg">
+                                <div class="slide-caption">
+                                    <h3>PARADISE ESCAPE</h3>
+                                    <p>Ocean View</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel3.jpg">
+                                <div class="slide-caption">
+                                    <h3>AZURE HORIZON</h3>
+                                    <p>Exclusive Resort</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel4.jpg">
+                                <div class="slide-caption">
+                                    <h3>GOLDEN SANDS</h3>
+                                    <p>Family Fun</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider-container">
+                <h2 class="slider-title"><i class="fa-solid fa-umbrella-beach"></i> CANCÚN</h2>
+                <div class="swiper mySwiperH2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel4.jpg">
+                                <div class="slide-caption">
+                                    <h3>GOLDEN SANDS</h3>
+                                    <p>Family Fun</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel3.jpg">
+                                <div class="slide-caption">
+                                    <h3>AZURE HORIZON</h3>
+                                    <p>Exclusive Resort</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="hoteles/fairmont.html" class="slide-link">
+                                <img src="assets/fairmont2.jpg">
+                                <div class="slide-caption">
+                                    <h3>FAIRMONT MAYAKOBA</h3>
+                                    <p>Luxury Stay</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel1.jpg">
+                                <div class="slide-caption">
+                                    <h3>HARD ROCK CANCÚN</h3>
+                                    <p>Party & Relax</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider-container">
+                <h2 class="slider-title"><i class="fa-solid fa-cake-candles"
+                        style="color: var(--accent); margin-right: 10px;"></i> ESPECIAL PARA BODAS</h2>
+                <div class="swiper mySwiperH3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/wedding1.png">
+                                <div class="slide-caption">
+                                    <h3>DREAM WEDDING</h3>
+                                    <p>Beach Ceremony</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/wedding2.png">
+                                <div class="slide-caption">
+                                    <h3>ROMANTIC GETAWAY</h3>
+                                    <p>Just Married</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/wedding3.png">
+                                <div class="slide-caption">
+                                    <h3>ELEGANT DINNER</h3>
+                                    <p>Ocean View Reception</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel4.jpg">
+                                <div class="slide-caption">
+                                    <h3>HONEYMOON SUITE</h3>
+                                    <p>Luxury Experience</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider-container">
+                <h2 class="slider-title"><i class="fa-solid fa-martini-glass-citrus"></i> PARA FIESTA DE NOCHE</h2>
+                <div class="swiper mySwiperH4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/party1.png">
+                                <div class="slide-caption">
+                                    <h3>NIGHTLIFE</h3>
+                                    <p>Club Vibes</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/party2.png">
+                                <div class="slide-caption">
+                                    <h3>ROOFTOP BAR</h3>
+                                    <p>Exclusive Cocktails</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/party3.png">
+                                <div class="slide-caption">
+                                    <h3>BEACH PARTY</h3>
+                                    <p>Fire & Dance</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="slide-link">
+                                <img src="assets/hotel1.jpg">
+                                <div class="slide-caption">
+                                    <h3>LIVE CONCERT</h3>
+                                    <p>Main Stage</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="main-footer">
+            <img src="assets/img_conecta_logo.png" alt="Logo" class="footer-logo">
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <p class="copyright">© 2026 CONECTA ANTIGRAVITY. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".myHeroSwiper", {
+            effect: "fade", loop: true, autoplay: { delay: 5000 },
+            pagination: { el: ".swiper-pagination", clickable: true }
+        });
+
+        const config = {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+            breakpoints: {
+                768: { slidesPerView: 2.5 },
+                1024: { slidesPerView: 3.5 }
+            }
+        };
+        new Swiper(".mySwiperH1", config);
+        new Swiper(".mySwiperH2", config);
+        new Swiper(".mySwiperH3", config);
+        new Swiper(".mySwiperH4", config);
+
+        // Fade In al cargar
+        document.getElementById('transitionOverlay').style.opacity = '0';
+
+        // Fade Out al salir (Interceptar enlaces)
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    document.getElementById('transitionOverlay').style.opacity = '1';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000);
+                }
+            });
+        });
+
+        /* --- UI INTERACTIONS (Hamburger & Search) --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Elements
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const searchIcon = document.getElementById('searchIcon');
+            const searchInput = document.getElementById('searchInput');
+
+            // Mobile Menu Toggle
+            function toggleMenu() {
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle('active');
+                    // Bloquear body scroll
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                }
+            }
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMenu);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+
+            // Close menu on link click
+            document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu && mobileMenu.classList.contains('active')) toggleMenu();
+                });
+            });
+
+            // Search Toggle
+            if (searchIcon && searchInput) {
+                searchIcon.addEventListener('click', () => {
+                    searchInput.classList.toggle('active');
+                    if (searchInput.classList.contains('active')) {
+                        searchInput.focus();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

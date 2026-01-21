@@ -282,10 +282,9 @@
                         <div class="reel-progress-bar" id="reelProgressBar"></div>
                     </div>
                     <div class="reel-buttons">
-                        <button onclick="toggleReelPause()" id="reelPlayBtn"><i class="fa-solid fa-pause"></i></button>
-                        <a id="downloadReelBtn" href="#" download class="download-btn">
+                        <button onclick="downloadCurrentReel()" class="download-btn">
                             <i class="fa-solid fa-download"></i> Descargar Reel
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -418,6 +417,42 @@
             reelModal.classList.remove('active');
             setTimeout(() => { reelModal.style.display = 'none'; reelPlayer.pause(); }, 300);
         }
+
+        async function downloadCurrentReel() {
+            const videoUrl = reelPlayer.src;
+            const fileName = videoUrl.split('/').pop();
+
+            try {
+                const response = await fetch(videoUrl);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                // Fallback if fetch fails (e.g. CORS or file://)
+                const a = document.createElement('a');
+                a.href = videoUrl;
+                a.download = fileName;
+                a.target = '_blank'; // At least it's better than nothing
+                a.click();
+            }
+        }
+
+        function toggleReelPause() {
+            if (reelPlayer.paused) {
+                reelPlayer.play();
+            } else {
+                reelPlayer.pause();
+            }
+        }
+
+        reelPlayer.addEventListener('click', toggleReelPause);
 
         reelPlayer.addEventListener('timeupdate', () => { reelProgressBar.style.width = `${(reelPlayer.currentTime / reelPlayer.duration) * 100}%`; });
 

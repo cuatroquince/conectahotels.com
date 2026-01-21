@@ -65,6 +65,19 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-list a.active,
+.nav-list a:hover {
+    color: var(--accent) !important;
+    text-shadow: 0 0 10px rgba(26, 231, 165, 0.4);
+}
+
+/* Ocultar navegación principal en páginas de hotel */
+.hotel-page .desktop-nav,
+.hotel-page .mobile-nav-list {
+    display: none !important;
 }
 
 /* NAV ACCIONES (Search + Hamburger) */

@@ -48,6 +48,11 @@
                 <a href="mainmenu.html" class="start-button-luxury">
                     <span class="btn-text">ACCEDER AL CATÁLOGO</span>
                 </a>
+
+                <!-- VR Headset Button -->
+                <button id="openVrBtn" class="vr-button-link">
+                    <i class="fa-solid fa-vr-cardboard"></i> VISUALIZA EN TUS LENTES VR
+                </button>
             </div>
 
             <div class="footer-center">
@@ -56,7 +61,43 @@
         </div>
     </main>
 
+    <!-- VR QR Modal -->
+    <div id="vrModal" class="vr-modal-overlay">
+        <div class="vr-modal-content">
+            <button id="closeVrBtn" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="vr-modal-title">EXPERIENCIA INMERSIVA</h2>
+            <p class="vr-modal-subtitle">Escanea este código con tu Meta Quest o Apple Vision Pro</p>
+            <div class="qr-container">
+                <img src="assets/qr_vr.png" alt="QR Code VR" class="qr-image">
+            </div>
+            <p class="vr-instruction">Te llevará directamente al menú principal en alta resolución.</p>
+        </div>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        // Modal Logic
+        const vrModal = document.getElementById('vrModal');
+        const openBtn = document.getElementById('openVrBtn');
+        const closeBtn = document.getElementById('closeVrBtn');
+
+        openBtn.addEventListener('click', () => {
+            vrModal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            vrModal.classList.remove('active');
+        });
+
+        // Close on outside click
+        vrModal.addEventListener('click', (e) => {
+            if (e.target === vrModal) {
+                vrModal.classList.remove('active');
+            }
+        });
+    </script>
 </body>
+
 
 <!-- Overlay de Transición -->
 <div class="page-transition-overlay" id="transitionOverlay"></div>

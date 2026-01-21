@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximamente | CONECTA</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1ae7a5;
+            --bg-dark: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(26, 231, 165, 0.1) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            filter: blur(50px);
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(26, 231, 165, 0.05) 0%, transparent 70%);
+            bottom: -50px;
+            left: -50px;
+            filter: blur(50px);
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 231, 165, 0.3);
+        }
+
+        .btn-return:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 231, 165, 0.5);
+            background: #15bc86;
+        }
+
+        .icon-box {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-box">
+            <i class="fa-solid fa-compass-drafting"></i>
+        </div>
+        <img src="assets/img_conecta_logo.png" alt="Logo" class="logo">
+        <h1>Próximamente</h1>
+        <p>Estamos preparando una experiencia exclusiva para este destino hotelero. Vuelve pronto para explorar más.</p>
+        <a href="mainmenu.html" class="btn-return">
+            <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo
+        </a>
+    </div>
+</body>
+
+</html>

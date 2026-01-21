@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Rock Hotel Cancún | CONECTA</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/mainmenu-style.css">
+    <link rel="stylesheet" href="../css/masterhotels.css">
+</head>
+
+<body class="hotel-page">
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
+
+    <main class="app-wrapper">
+        <header class="navbar">
+            <div class="brand">
+                <a href="../mainmenu.html">
+                    <img src="../assets/img_conecta_logo.png" alt="Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-list">
+                    <li><a href="../mainmenu.html">INICIO</a></li>
+                    <li><a href="../hoteles.html" class="active">HOTELES</a></li>
+                    <li><a href="../destinos.html">DESTINOS</a></li>
+                    <li><a href="../contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+                    <div class="search-icon" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <!-- Regresar Desktop -->
+                <a href="../mainmenu.html" class="back-link-desktop"
+                    style="margin-left: 20px; font-size: 0.7rem; color: var(--accent); font-weight: 800; letter-spacing: 1px;">
+                    <i class="fa-solid fa-arrow-left"></i> REGRESAR
+                </a>
+                <div class="hamburger-btn" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </header>
+
+        <!-- Overlay Menu Mobile -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="close-menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="mobile-nav-list">
+                <li><a href="../mainmenu.html">INICIO</a></li>
+                <li><a href="../hoteles.html" class="active">HOTELES</a></li>
+                <li><a href="../destinos.html">DESTINOS</a></li>
+                <li><a href="../contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+
+        <section class="hero-section">
+            <img src="../assets/hr-hero.jpg" class="hero-image">
+            <div class="hero-overlay">
+                <span class="badge">The Sound of Your Stay</span>
+                <h1>Hard Rock Hotel Cancún</h1>
+                <p><i class="fa-solid fa-location-dot"></i> Zona Hotelera, Cancún, México</p>
+                <div class="hotel-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hotel-slider-detail">
+            <div class="swiper mySwiperDetail">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../assets/hr-room1.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/hr-pool.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/hr-room2.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/hr-lobby.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/hr-beach.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/hr-spa.jpg" onclick="openImage(this.src)"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REELS CON IMÁGENES -->
+        <section class="content-section reels-section">
+            <h2 class="section-title">Reels & Shorts</h2>
+            <div class="reels-grid">
+                <div class="reel-item" onclick="openReel('../assets/hr-room1.jpg')">
+                    <img src="../assets/hr-room1.jpg" alt="Reel 1">
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/hr-pool.jpg')">
+                    <img src="../assets/hr-pool.jpg" alt="Reel 2">
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/hr-beach.jpg')">
+                    <img src="../assets/hr-beach.jpg" alt="Reel 3">
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/hr-spa.jpg')">
+                    <img src="../assets/hr-spa.jpg" alt="Reel 4">
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FICHA TÉCNICA -->
+        <section class="content-section technical-specs">
+            <h2 class="section-title">Ficha Técnica</h2>
+            <p class="justified-text">
+                Ubicado en el corazón de la Zona Hotelera, Hard Rock Hotel Cancún ofrece una experiencia All-Inclusive
+                donde
+                el estilo de vida de una estrella de rock se combina con la belleza del Caribe Mexicano.
+            </p>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/hr-room1.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-music"></i>
+                        <h3>601 HABITACIONES</h3>
+                        <p>Con balcones y vistas al mar.</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/hr-hero.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h3>ALL-INCLUSIVE</h3>
+                        <p>9 restaurantes y bares.</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/hotel1.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-guitar"></i>
+                        <h3>EXPERIENCIAS</h3>
+                        <p>Memorabilia y programas musicales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULATED VIDEO -->
+        <section class="content-section video-block">
+            <div class="video-container">
+                <img id="simulatedVideo" src="../assets/hr-hero.jpg" class="hotel-video"
+                    style="object-fit: cover; width: 100%; height: 100%;">
+                <i class="fa-solid fa-play play-overlay show" id="playOverlay"></i>
+                <div class="video-controls" id="videoControls" style="opacity: 1;">
+                    <button class="control-btn" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar" style="width: 35%;"></div>
+                    </div>
+                    <div class="volume-container">
+                        <button class="control-btn" id="muteBtn"><i class="fa-solid fa-volume-high"></i></button>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
+                            value="0.8">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 360 -->
+        <section class="tour-360-section">
+            <div class="tour-content" style="background: rgba(0,0,0,0.6);">
+                <i class="fa-solid fa-star tour-icon" style="color: #ffc107;"></i>
+                <h2>Show 360°</h2>
+                <p>Vive la vibra del escenario desde la palma de tu mano.</p>
+                <a href="../vr/hardrock-360.html" class="btn-tour"
+                    style="border-color: #ffc107; color: #ffc107;">Iniciar Show</a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Galería de Imágenes</h2>
+            <div class="photo-gallery">
+                <img src="../assets/hr-room1.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hr-room2.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hr-pool.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hr-lobby.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hr-beach.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hr-spa.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hotel1.jpg" onclick="openImage(this.src)">
+                <img src="../assets/hotel2.jpg" onclick="openImage(this.src)">
+            </div>
+        </section>
+
+        <section class="content-section related-section">
+            <h2 class="section-title">Experiencias Relacionadas</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/related_hr_music.png">
+                    </div>
+                    <div class="card-content">
+                        <h3>MÚSICA & VIBRA</h3>
+                        <p>Memorabilia auténtica y amenidades exclusivas como Sound of Your Stay®.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/related_hr_spa.png">
+                    </div>
+                    <div class="card-content">
+                        <h3>ROCK SPA®</h3>
+                        <p>Rituales únicos que combinan la musicoterapia con el bienestar profundo.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/hr-hero.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h3>VISTA CARIBE</h3>
+                        <p>Ubicación privilegiada en el corazón de la Zona Hotelera de Cancún.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA HÍBRIDO -->
+        <section class="content-section map-block">
+            <h2 class="section-title">Encuentra tu Ritmo</h2>
+            <div class="map-wrapper" id="mapWrapper">
+                <div id="mapContainer">
+                    <img id="offlineMap" src="../assets/offline_map_hardrock.png" alt="Mapa Offline">
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <img src="../assets/img_conecta_logo.png" class="footer-logo">
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright">© 2026 Conecta Antigravity</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- IMAGE MODAL -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-backdrop" onclick="closeImage()"></div>
+        <div class="modal-content-img">
+            <button class="close-modal-btn" onclick="closeImage()"><i class="fa-solid fa-xmark"></i></button>
+            <img id="modalImg" src="">
+        </div>
+    </div>
+
+    <!-- REEL MODAL -->
+    <div id="reelModal" class="reel-modal">
+        <div class="modal-backdrop" onclick="closeReel()"></div>
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeReel()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-wrapper">
+                <!-- Se inyectará imagen o video dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/libs/swiper-bundle.min.js"></script>
+    <script>
+        // Transition and Nav
+        document.getElementById('transitionOverlay').style.opacity = '0';
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    document.getElementById('transitionOverlay').style.opacity = '1';
+                    setTimeout(() => { window.location.href = href; }, 800);
+                }
+            });
+        });
+
+        // Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); });
+        closeMenuBtn.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
+
+        // Swiper
+        var swiper = new Swiper(".mySwiperDetail", {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: { 768: { slidesPerView: 2.5 } }
+        });
+
+        // Hybrid Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('mapContainer');
+            const iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.466094916!2d-86.772!3d21.076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c29c8e8e8e8e7%3A0x6e8e8e8e8e8e8e8e!2sHard%20Rock%20Hotel%20Cancun!5e0!3m2!1ses-419!2smx!4v1705680000000!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
+            if (navigator.onLine) { container.innerHTML = iframe; }
+            window.addEventListener('online', () => { container.innerHTML = iframe; });
+        });
+
+        // Simulated Video Logic
+        const playBtn = document.getElementById('playPauseBtn');
+        const playOverlay = document.getElementById('playOverlay');
+        function togglePlay() {
+            if (playOverlay.classList.contains('show')) { playOverlay.classList.remove('show'); playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'; }
+            else { playOverlay.classList.add('show'); playBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; }
+        }
+        document.getElementById('simulatedVideo').addEventListener('click', togglePlay);
+        playBtn.addEventListener('click', togglePlay);
+
+        // Reel Logic
+        const reelModal = document.getElementById('reelModal');
+        const reelVideoWrapper = document.querySelector('#reelModal .video-wrapper');
+
+        function openReel(src) {
+            reelVideoWrapper.innerHTML = `<img src="${src}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+                                          <div class="reel-controls">
+                                              <div class="reel-buttons">
+                                                  <a href="${src}" download class="download-btn"><i class="fa-solid fa-download"></i> Descargar Imagen</a>
+                                              </div>
+                                          </div>`;
+            reelModal.style.display = 'flex';
+            setTimeout(() => reelModal.classList.add('active'), 10);
+        }
+
+        function closeReel() {
+            reelModal.classList.remove('active');
+            setTimeout(() => { reelModal.style.display = 'none'; }, 300);
+        }
+
+        // Image Modal Logic
+        const imageModal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openImage(src) {
+            modalImg.src = src;
+            imageModal.style.display = 'flex';
+            setTimeout(() => imageModal.classList.add('active'), 10);
+        }
+
+        function closeImage() {
+            imageModal.classList.remove('active');
+            setTimeout(() => { imageModal.style.display = 'none'; }, 300);
+        }
+    </script>
+</body>
+
+</html>

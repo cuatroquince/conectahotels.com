@@ -28,7 +28,8 @@
         content="Explora nuestro catálogo premium de hoteles de lujo. Experiencias inmersivas y visitas virtuales 360°.">
     <meta property="twitter:image" content="https://cuatroquince.github.io/conectahotels.com/assets/og_preview.png">
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Offline Swiper CSS -->
+    <link rel="stylesheet" href="assets/libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/mainmenu-style.css">
 </head>
 
@@ -45,10 +46,10 @@
             <!-- Menú Desktop -->
             <nav class="desktop-nav">
                 <ul class="nav-list">
-                    <li><a href="#" class="active">INICIO</a></li>
-                    <li><a href="#">HOTELES</a></li>
+                    <li><a href="mainmenu.html" class="active">INICIO</a></li>
+                    <li><a href="hoteles.html">HOTELES</a></li>
                     <li><a href="destinos.html">DESTINOS</a></li>
-                    <li><a href="#">CONTACTO</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
 
@@ -69,9 +70,10 @@
         <div class="mobile-menu-overlay" id="mobileMenu">
             <div class="close-menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></div>
             <ul class="mobile-nav-list">
-                <li><a href="#" class="active">INICIO</a></li>
-                <li><a href="#">HOTELES</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="mainmenu.html" class="active">INICIO</a></li>
+                <li><a href="hoteles.html">HOTELES</a></li>
+                <li><a href="destinos.html">DESTINOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
             </ul>
         </div>
 
@@ -90,13 +92,15 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/hotel1.jpg" alt="HARD ROCK CANCÚN">
-                        <div class="hero-gradient"></div>
-                        <div class="netflix-caption">
-                            <span class="badge">ALL INCLUSIVE</span>
-                            <h1 class="netflix-title">HARD ROCK<br>CANCÚN</h1>
-                            <p><i class="fa-solid fa-music"></i> Music & Vibe</p>
-                        </div>
+                        <a href="hoteles/hardrock.html">
+                            <img src="assets/hr-hero.jpg" alt="HARD ROCK CANCÚN">
+                            <div class="hero-gradient"></div>
+                            <div class="netflix-caption">
+                                <span class="badge">ALL INCLUSIVE</span>
+                                <h1 class="netflix-title">HARD ROCK<br>CANCÚN</h1>
+                                <p><i class="fa-solid fa-music"></i> Music & Vibe</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
                         <img src="assets/hotel2.jpg" alt="PARADISE ESCAPE">
@@ -190,8 +194,8 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#" class="slide-link">
-                                <img src="assets/hotel1.jpg">
+                            <a href="hoteles/hardrock.html" class="slide-link">
+                                <img src="assets/hr-pool.jpg">
                                 <div class="slide-caption">
                                     <h3>HARD ROCK CANCÚN</h3>
                                     <p>Party & Relax</p>
@@ -279,8 +283,8 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#" class="slide-link">
-                                <img src="assets/hotel1.jpg">
+                            <a href="hoteles/hardrock.html" class="slide-link">
+                                <img src="assets/hr-room1.jpg">
                                 <div class="slide-caption">
                                     <h3>LIVE CONCERT</h3>
                                     <p>Main Stage</p>
@@ -307,7 +311,8 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Offline Swiper JS -->
+    <script src="assets/libs/swiper-bundle.min.js"></script>
     <script>
         new Swiper(".myHeroSwiper", {
             effect: "fade", loop: true, autoplay: { delay: 5000 },

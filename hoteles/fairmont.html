@@ -4,60 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fairmont Mayakoba | Premium</title>
+    <title>Fairmont Mayakoba | CONECTA</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Fairmont Mayakoba | CONECTA">
-    <meta name="description"
-        content="Descubre Fairmont Mayakoba en la Riviera Maya. Lujo sostenible, canales de agua y campo de golf PGA.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cuatroquince.github.io/conectahotels.com/hoteles/fairmont.html">
-    <meta property="og:title" content="Fairmont Mayakoba | CONECTA">
-    <meta property="og:description"
-        content="Descubre Fairmont Mayakoba en la Riviera Maya. Lujo sostenible, canales de agua y campo de golf PGA.">
-    <meta property="og:image" content="https://cuatroquince.github.io/conectahotels.com/assets/og_preview.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cuatroquince.github.io/conectahotels.com/hoteles/fairmont.html">
-    <meta property="twitter:title" content="Fairmont Mayakoba | CONECTA">
-    <meta property="twitter:description"
-        content="Descubre Fairmont Mayakoba en la Riviera Maya. Lujo sostenible, canales de agua y campo de golf PGA.">
-    <meta property="twitter:image" content="https://cuatroquince.github.io/conectahotels.com/assets/og_preview.png">
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/mainmenu-style.css">
-    <link rel="stylesheet" href="../css/fairmont-style.css">
+    <link rel="stylesheet" href="../css/masterhotels.css">
 </head>
 
-<body>
+<body class="hotel-page">
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
+
     <main class="app-wrapper">
         <header class="navbar">
             <div class="brand">
-                <img src="../assets/img_conecta_logo.png" alt="Logo" class="nav-logo">
+                <a href="../mainmenu.html">
+                    <img src="../assets/img_conecta_logo.png" alt="Logo" class="nav-logo">
+                </a>
             </div>
-
-            <!-- Navegación "Regresar" -->
-            <nav class="nav-return">
-                <!-- Desktop: Texto + Flecha -->
-                <a href="../mainmenu.html" class="back-link-desktop">
+            <nav class="desktop-nav">
+                <ul class="nav-list">
+                    <li><a href="../mainmenu.html">INICIO</a></li>
+                    <li><a href="../hoteles.html" class="active">HOTELES</a></li>
+                    <li><a href="../destinos.html">DESTINOS</a></li>
+                    <li><a href="../contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+                    <div class="search-icon" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <!-- Regresar Desktop -->
+                <a href="../mainmenu.html" class="back-link-desktop"
+                    style="margin-left: 20px; font-size: 0.7rem; color: var(--accent); font-weight: 800; letter-spacing: 1px;">
                     <i class="fa-solid fa-arrow-left"></i> REGRESAR
                 </a>
-
-                <!-- Mobile: X en círculo verde (Solo visible < 768px por CSS) -->
-                <a href="../mainmenu.html" class="back-btn-mobile">
-                    <i class="fa-solid fa-xmark"></i>
-                </a>
-            </nav>
-
-            <div class="search-container">
-                <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
-                <div class="search-icon" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="hamburger-btn" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></div>
             </div>
         </header>
+
+        <!-- Overlay Menu Mobile -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="close-menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="mobile-nav-list">
+                <li><a href="../mainmenu.html">INICIO</a></li>
+                <li><a href="../hoteles.html" class="active">HOTELES</a></li>
+                <li><a href="../destinos.html">DESTINOS</a></li>
+                <li><a href="../contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
 
         <section class="hero-section">
             <img src="../assets/fairmont7.jpg" class="hero-image">
@@ -77,126 +73,174 @@
         <section class="hotel-slider-detail">
             <div class="swiper mySwiperDetail">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../assets/fairmont1.jpg"></div>
-                    <div class="swiper-slide"><img src="../assets/fairmont2.jpg"></div>
-                    <div class="swiper-slide"><img src="../assets/fairmont3.jpg"></div>
-                    <div class="swiper-slide"><img src="../assets/fairmont4.jpg"></div>
-                    <div class="swiper-slide"><img src="../assets/fairmont5.jpg"></div>
-                    <div class="swiper-slide"><img src="../assets/fairmont6.jpg"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont1.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont2.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont3.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont4.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont5.jpg" onclick="openImage(this.src)"></div>
+                    <div class="swiper-slide"><img src="../assets/fairmont6.jpg" onclick="openImage(this.src)"></div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2 class="section-title">Ficha Técnica & Argumentario</h2>
-            <p class="justified-text">
-                Propiedad insignia de 240 hectáreas con certificación AAA-5 Diamantes.
-                <strong style="color:var(--accent)">Puntos de Venta (USPs):</strong>
-                Conectividad única mediante canales fluviales, enfoque en sostenibilidad, y el campo de golf PGA "El
-                Camaleón".
-                Ideal para clientes de alto poder adquisitivo que buscan privacidad y contacto con la naturaleza
-                (Eco-Luxury).
-            </p>
+        <!-- REELS -->
+        <section class="content-section reels-section">
+            <h2 class="section-title">Reels & Shorts</h2>
+            <div class="reels-grid">
+                <div class="reel-item" onclick="openReel('../assets/reel1-fairmont.mp4')">
+                    <video src="../assets/reel1-fairmont.mp4" muted loop playsinline></video>
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/reel2-fairmont.mp4')">
+                    <video src="../assets/reel2-fairmont.mp4" muted loop playsinline></video>
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/reel3-fairmont.mp4')">
+                    <video src="../assets/reel3-fairmont.mp4" muted loop playsinline></video>
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="reel-item" onclick="openReel('../assets/reel4-fairmont.mp4')">
+                    <video src="../assets/reel4-fairmont.mp4" muted loop playsinline></video>
+                    <div class="reel-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
         </section>
 
+        <!-- FICHA TÉCNICA -->
+        <section class="content-section technical-specs">
+            <h2 class="section-title">Ficha Técnica</h2>
+            <p class="justified-text">
+                Fairmont Mayakoba es un resort de 5 diamantes situado dentro de la comunidad privada de Mayakoba en la
+                Riviera Maya.
+                Ofrece un equilibrio perfecto entre el lujo moderno y la belleza natural de los manglares y canales
+                navegables.
+            </p>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/fairmont1.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-bed"></i>
+                        <h3>401 HABITACIONES</h3>
+                        <p>Entre casitas y suites de lujo.</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/fairmont_gallery8.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h3>GASTRONOMÍA</h3>
+                        <p>4 restaurantes de especialidad.</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-img-wrapper">
+                        <img src="../assets/fairmont_gallery5.jpg">
+                    </div>
+                    <div class="amenity-info">
+                        <i class="fa-solid fa-spa"></i>
+                        <h3>WILLOW STREAM</h3>
+                        <p>Spa de clase mundial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO VLOG -->
         <section class="content-section video-block">
             <div class="video-container">
-                <video id="hotelVideo" loop muted playsinline class="hotel-video">
+                <video id="hotelVideo" autoplay loop muted playsinline class="hotel-video">
                     <source src="../assets/Vlog_Fairmont_Compress.mp4">
                 </video>
-
-                <!-- Overlay de Play Central (Animación) -->
                 <i class="fa-solid fa-play play-overlay" id="playOverlay"></i>
-
-                <!-- Barra de Controles -->
                 <div class="video-controls" id="videoControls">
                     <button class="control-btn" id="playPauseBtn"><i class="fa-solid fa-pause"></i></button>
-
                     <div class="progress-container" id="progressContainer">
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
-
                     <div class="volume-container">
-                        <button class="control-btn" id="muteBtn"><i class="fa-solid fa-volume-xmark"></i></button>
+                        <button class="control-btn" id="muteBtn"><i class="fa-solid fa-volume-high"></i></button>
                         <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
-                            value="0">
+                            value="0.8">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECCIÓN 360 -->
         <section class="tour-360-section">
             <div class="tour-content">
-                <i class="fa-solid fa-street-view tour-icon"></i>
-                <h2>Visualización Inmersiva</h2>
-                <p>Herramienta interactiva para presentar instalaciones al cliente.</p>
-                <a href="../vr/fairmont-360.html" class="btn-tour">INICIAR DEMO 360° <i
-                        class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </section>
-
-        <section class="content-section amenities-block">
-            <h2 class="section-title">Infraestructura & Servicios</h2>
-            <div class="amenities-grid">
-                <div class="amenity-card">
-                    <i class="fa-solid fa-gem"></i>
-                    <h3>Categoría</h3>
-                    <p>5 Diamantes AAA (Lujo Certificado)</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-golf-ball-tee"></i>
-                    <h3>Golf</h3>
-                    <p>Sede del PGA Tour (Mayakoba)</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-spa"></i>
-                    <h3>Wellness</h3>
-                    <p>Willow Stream Spa (Clase Mundial)</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-water-ladder"></i>
-                    <h3>Piscinas</h3>
-                    <p>5 Áreas (Adultos e Infinity)</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-utensils"></i>
-                    <h3>Gastronomía</h3>
-                    <p>8 Centros de Consumo Gourmet</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-umbrella-beach"></i>
-                    <h3>Playa</h3>
-                    <p>Zona Privada con Servicio</p>
-                </div>
+                <i class="fa-solid fa-vr-cardboard tour-icon"></i>
+                <h2>Experiencia 360°</h2>
+                <p>Explora nuestras instalaciones en una inmersión total de realidad virtual.</p>
+                <a href="../vr/fairmont-360.html" class="btn-tour">Iniciar Recorrido</a>
             </div>
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Galería Exclusiva</h2>
+            <h2 class="section-title">Galería de Imágenes</h2>
             <div class="photo-gallery">
-                <img src="../assets/fairmont_gallery1.jpg">
-                <img src="../assets/fairmont_gallery2.jpg">
-                <img src="../assets/fairmont_gallery3.jpg">
-                <img src="../assets/fairmont_gallery4.jpg">
-                <img src="../assets/fairmont_gallery5.jpg">
-                <img src="../assets/fairmont_gallery6.jpg">
-                <img src="../assets/fairmont_gallery7.jpg">
-                <img src="../assets/fairmont_gallery8.jpg">
+                <img src="../assets/fairmont_gallery1.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery2.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery3.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery4.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery5.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery6.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery7.jpg" onclick="openImage(this.src)">
+                <img src="../assets/fairmont_gallery8.jpg" onclick="openImage(this.src)">
             </div>
         </section>
 
+        <section class="content-section related-section">
+            <h2 class="section-title">Experiencias Relacionadas</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/related_dining_1768962845627.png">
+                    </div>
+                    <div class="card-content">
+                        <h3>GASTRONOMÍA</h3>
+                        <p>Experiencias culinarias de clase mundial con chefs internacionales.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/related_spa_1768962873281.png">
+                    </div>
+                    <div class="card-content">
+                        <h3>BIENESTAR</h3>
+                        <p>Spas de lujo y rituales de relajación profunda.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/related_yacht_1768962859918.png">
+                    </div>
+                    <div class="card-content">
+                        <h3>AVENTURAS</h3>
+                        <p>Excursiones privadas y actividades acuáticas exclusivas.</p>
+                        <a href="#" class="btn-related">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA HÍBRIDO -->
         <section class="content-section map-block">
-            <h2 class="section-title">Ubicación</h2>
-            <p class="justified-text">Ctra. Federal Cancún-Playa del Carmen Km. 298, Playa del Carmen, Quintana Roo,
-                México.</p>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.396924727187!2d-87.03983482475244!3d20.684173897816827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e42ed96030925%3A0x67396c21e6462760!2sFairmont%20Mayakoba!5e0!3m2!1ses-419!2smx!4v1705680000000!5m2!1ses-419!2smx"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h2 class="section-title">Ubicación Privilege</h2>
+            <div class="map-wrapper" id="mapWrapper">
+                <!-- Online: Google Map -->
+                <!-- Offline: Static Image -->
+                <div id="mapContainer">
+                    <img id="offlineMap" src="../assets/offline_map_fairmont_1768964098542.png" alt="Mapa Offline">
+                </div>
             </div>
         </section>
-
 
 
         <footer class="main-footer">
@@ -215,33 +259,88 @@
         </footer>
     </main>
 
-    <div class="page-transition-overlay" id="transitionOverlay"></div>
+    <!-- IMAGE MODAL -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-backdrop" onclick="closeImage()"></div>
+        <div class="modal-content-img">
+            <button class="close-modal-btn" onclick="closeImage()"><i class="fa-solid fa-xmark"></i></button>
+            <img id="modalImg" src="">
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- REEL MODAL -->
+    <div id="reelModal" class="reel-modal">
+        <div class="modal-backdrop" onclick="closeReel()"></div>
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeReel()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-wrapper">
+                <video id="reelPlayer" playsinline loop>
+                    <source src="" type="video/mp4">
+                </video>
+                <div class="reel-controls">
+                    <div class="reel-progress-container" id="reelProgressContainer">
+                        <div class="reel-progress-bar" id="reelProgressBar"></div>
+                    </div>
+                    <div class="reel-buttons">
+                        <button onclick="toggleReelPause()" id="reelPlayBtn"><i class="fa-solid fa-pause"></i></button>
+                        <a id="downloadReelBtn" href="#" download class="download-btn">
+                            <i class="fa-solid fa-download"></i> Descargar Reel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/libs/swiper-bundle.min.js"></script>
     <script>
-        const swiperDetail = new Swiper(".mySwiperDetail", {
-            slidesPerView: 1.5, spaceBetween: 15, centeredSlides: true, loop: true,
-        });
-
-        // Transición de Página
-        // Fade In al cargar
+        // Transition and Nav
         document.getElementById('transitionOverlay').style.opacity = '0';
 
-        // Fade Out al salir (Interceptar enlaces)
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href && href !== '#' && !href.startsWith('javascript')) {
                     e.preventDefault();
                     document.getElementById('transitionOverlay').style.opacity = '1';
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 1000);
+                    setTimeout(() => { window.location.href = href; }, 800);
                 }
             });
         });
 
-        /* --- VIDEO CONTROLS LOGIC --- */
+        // Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); });
+        closeMenuBtn.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
+
+        // Swiper
+        var swiper = new Swiper(".mySwiperDetail", {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2.5 }
+            }
+        });
+
+        // Hybrid Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('mapContainer');
+            const iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.3082570054705!2d-87.0315!3d20.6844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e43e7e7e7e7e7%3A0x7e7e7e7e7e7e7e7e!2sFairmont%20Mayakoba!5e0!3m2!1ses-419!2smx!4v1705680000000!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
+            if (navigator.onLine) { container.innerHTML = iframe; }
+            window.addEventListener('online', () => { container.innerHTML = iframe; });
+        });
+
+        // Video Logic
         const video = document.getElementById('hotelVideo');
         const playBtn = document.getElementById('playPauseBtn');
         const playOverlay = document.getElementById('playOverlay');
@@ -249,22 +348,12 @@
         const progressBar = document.getElementById('progressBar');
         const muteBtn = document.getElementById('muteBtn');
         const volumeSlider = document.getElementById('volumeSlider');
-        const videoControls = document.getElementById('videoControls');
 
-        // Autoplay inicial
-        video.play().catch(() => {
-            // Si el autoplay falla, mostrar icono de play
-            playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-            playOverlay.classList.add('show');
-        });
-
-        // Toggle Play/Pause
         function togglePlay() {
             if (video.paused) {
                 video.play();
                 playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
                 playOverlay.classList.remove('show');
-                playOverlay.style.opacity = '0';
             } else {
                 video.pause();
                 playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
@@ -275,58 +364,77 @@
         video.addEventListener('click', togglePlay);
         playBtn.addEventListener('click', togglePlay);
 
-        // Update Progress Bar
         video.addEventListener('timeupdate', () => {
-            const percentage = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = `${percentage}%`;
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = `${progress}%`;
         });
 
-        // Click on Progress Bar
         progressContainer.addEventListener('click', (e) => {
             const rect = progressContainer.getBoundingClientRect();
             const pos = (e.clientX - rect.left) / rect.width;
             video.currentTime = pos * video.duration;
         });
 
-        // Volume Control
-        volumeSlider.addEventListener('input', (e) => {
-            video.volume = e.target.value;
-            video.muted = false;
-            updateVolumeIcon();
-        });
-
-        muteBtn.addEventListener('click', () => {
+        function toggleMute() {
             video.muted = !video.muted;
             updateVolumeIcon();
-        });
+        }
 
         function updateVolumeIcon() {
             if (video.muted || video.volume === 0) {
                 muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-                volumeSlider.value = 0;
+            } else if (video.volume < 0.5) {
+                muteBtn.innerHTML = '<i class="fa-solid fa-volume-low"></i>';
             } else {
                 muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-                volumeSlider.value = video.volume;
             }
         }
 
-        // Show controls on hover hack for mobile (tap to show)
-        video.addEventListener('touchstart', () => {
-            videoControls.style.opacity = '1';
-            setTimeout(() => { videoControls.style.opacity = '0'; }, 3000);
+        muteBtn.addEventListener('click', toggleMute);
+
+        volumeSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+            video.muted = video.volume === 0;
+            updateVolumeIcon();
         });
 
-        // Búsqueda Expandible
-        const searchIcon = document.getElementById('searchIcon');
-        const searchInput = document.getElementById('searchInput');
+        // Initialize Volume Icon
+        video.volume = 0.8;
+        updateVolumeIcon();
 
-        searchIcon.addEventListener('click', () => {
-            searchInput.classList.toggle('active');
-            if (searchInput.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
+        // Reel Logic
+        const reelModal = document.getElementById('reelModal');
+        const reelPlayer = document.getElementById('reelPlayer');
+        const reelProgressBar = document.getElementById('reelProgressBar');
 
+        function openReel(src) {
+            reelPlayer.src = src;
+            reelModal.style.display = 'flex';
+            setTimeout(() => reelModal.classList.add('active'), 10);
+            reelPlayer.play();
+        }
+
+        function closeReel() {
+            reelModal.classList.remove('active');
+            setTimeout(() => { reelModal.style.display = 'none'; reelPlayer.pause(); }, 300);
+        }
+
+        reelPlayer.addEventListener('timeupdate', () => { reelProgressBar.style.width = `${(reelPlayer.currentTime / reelPlayer.duration) * 100}%`; });
+
+        // Image Modal Logic
+        const imageModal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openImage(src) {
+            modalImg.src = src;
+            imageModal.style.display = 'flex';
+            setTimeout(() => imageModal.classList.add('active'), 10);
+        }
+
+        function closeImage() {
+            imageModal.classList.remove('active');
+            setTimeout(() => { imageModal.style.display = 'none'; }, 300);
+        }
     </script>
 </body>
 
